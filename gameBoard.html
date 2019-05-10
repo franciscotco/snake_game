@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snake Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="gameBoard.css">
+  </head>
+  <body>
+    <!-- Uncomment for STEP_5
+      <div id="score">0</div> 
+    -->
+    <canvas id="gameBoard"></canvas>
+    <script>
+         // DIMENTION
+         const WIDTH = 500;
+         const HEIGHT= 500;
+
+         // COLOR
+         const RED = "red";
+         const BLUE = "blue";
+         const YELLOW = "yellow";
+         const GREEN = "green";
+         const BLACK = "BLACK";
+         const WHITE = "white";
+
+         function resetGameBoard() {
+            const gameBoard = document.getElementById("gameBoard").getContext("2d");
+
+            // Set the gameboard DIMENTION with [WIDTH & HEIGHT]
+            gameBoard.canvas.width = 0;
+            gameBoard.canvas.height = 0;
+
+            // Set the backgroundColor of the gameBoard with a COLOR [RED, BLUE, etc.]
+            gameBoard.fillStyle = WHITE;
+            // Set the borderColor of the gameBoard with a COLOR [RED, BLUE, etc.]
+            gameBoard.strokestyle = WHITE;
+
+            // Fill all the gameBoard background in each cells with the DIMENTION
+            // EXAMPLE gameBoard.fillReact(min-x, min-y, max-x, max-y)
+            gameBoard.fillRect(0, 0, WIDTH, HEIGHT);
+
+            // Fill all the gameBoard border
+            // EXAMPLE gameBoard.strokeReact(min-x, min-y, max-x, max-y)
+            gameBoard.strokeRect(0, 0, 0, 0);
+         }
+        const initializeGameBoard = resetGameBoard;
+
+        // /!\ CALL initializeGameBoard() to print the board on the web page /!\
+        // initializeGameBoard();
+   </script>
+
+   <!-- Uncomment for STEP_2
+     <script type="text/javascript" src="snake.js"></script> 
+    -->
+
+   <!-- Uncomment for STEP_3
+     <script type="text/javascript" src="gameLoop.js"></script> 
+      <script type="text/javascript" src="changeSnakeDirection.js"></script> 
+    -->
+  </body>
+</html>
